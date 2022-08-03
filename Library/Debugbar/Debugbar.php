@@ -2,12 +2,12 @@
 
 namespace Library\Debugbar;
 
-use App\Library\Debugbar\Decorators\Decorator;
-use App\Library\Debugbar\Enums\DecorationTypes;
-use App\Library\Debugbar\Interfaces\DebugbarDataInterface;
-use App\Library\Debugbar\Interfaces\DebugDataInterface;
+use Library\Debugbar\Decorators\Decorator;
+use Library\Debugbar\Enums\DecorationTypes;
+use Library\Debugbar\Interfaces\DebugbarDataInterface;
+use Library\Debugbar\Interfaces\DebugDataInterface;
 
-class Debugbar implements DebugbarDataInterface
+class Debugbar implements \Library\Debugbar\Interfaces\DebugbarDataInterface
 {
     private $data;
 
@@ -29,7 +29,7 @@ class Debugbar implements DebugbarDataInterface
 
     private $queryString;
 
-    public function __construct(DebugDataInterface $debugData)
+    public function __construct(\Library\Debugbar\Interfaces\DebugDataInterface $debugData)
     {
         $this->setUrl($debugData->getUrl());
         $this->setController($debugData->getController());

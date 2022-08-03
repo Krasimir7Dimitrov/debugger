@@ -2,14 +2,15 @@
 
 namespace Library\Debugbar\Decorators;
 
-use App\Library\Debugbar\Enums\DecorationTypes;
-use App\Library\Debugbar\Interfaces\DebugbarDataInterface;
+use Library\Debugbar\Enums\DecorationTypes;
+use Library\Debugbar\Interfaces\DebugbarDataInterface;
+use Library\Debugbar\Interfaces\DebugDataInterface;
 
 class Decorator
 {
     public $data;
 
-    public function __construct(DebugbarDataInterface $debugbarData)
+    public function __construct($debugbarData)
     {
         $this->data = $debugbarData->getDebugData();
     }
